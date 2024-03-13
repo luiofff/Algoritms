@@ -9,12 +9,11 @@ class Book:
 
 
 class Bookcase:
-    def __init__(self, max_weight):
-        self.max_weight = max_weight
+    def __init__(self):
         self.books = []
 
     def add_book(self, book):
-        if self.get_total_weight() + book.weight <= self.max_weight:
+        if self.get_total_weight() + book.weight <= 800:
             self.books.append(book)
             print(f"Добавлена книга авторства {book.author}")
         else:
@@ -48,7 +47,7 @@ class Bookcase:
 
 if __name__ == "__main__":
 
-    bookcase = Bookcase(300)
+    bookcase = Bookcase()
     active = None
     while active != 0:
         print("Меню: 1 - Добавить книгу 2 - Найти по автору 3 - Удалить книгу 0 - выход")
